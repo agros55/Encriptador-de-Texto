@@ -1,1 +1,275 @@
-/*# sourceMappingURL=styles.css.map */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rajdhani&display=swap');
+
+/* Variables */
+:root {
+  /* COLORES */
+  --white: #ffffff;
+
+  /* Dark blue */
+  --dark-blue-100: #609ed4;
+  --dark-blue-200: #356ea9;
+  --dark-blue-300: #0a3871;
+  --dark-blue-400: #072b61;
+  --dark-blue-500: #052051;
+
+  /* Light blue */
+  --light-blue-100: #f3f5fc;
+  --light-blue-200: #eff1fa;
+  --light-blue-300: #e9ecf8;
+  --light-blue-400: #aab2d5;
+  --light-blue-500: #757fb2;
+
+  /* Gray */
+  --gray-100: #ced4da;
+  --gray-200: #adb5bd;
+  --gray-300: #868e96;
+  --gray-400: #495057;
+  --gray-500: #343a40;
+
+  --shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.43);
+
+
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  color: var(--dark-blue-300);
+  font-size: 10px;
+  overflow: hidden;
+  /*   border: solid 1px black; */
+}
+
+body {
+  background-color: var(--light-blue-100);
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: auto 1fr 30px;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas:
+    "header resultado"
+    "ingreso resultado"
+    "footer footer";
+}
+
+/* COMPONENTES */
+
+.btn {
+  padding: 2.4rem;
+  font-size: 1.6rem;
+  border-radius: 2.4rem;
+  width: 100%;
+  box-shadow: var(--shadow);
+  -webkit-box-shadow: var(--shadow);
+  -moz-box-shadow: var(--shadow);
+  transition: all .3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+.btn.primario {
+  background-color: var(--dark-blue-300);
+  border: none;
+  color: var(--white);
+}
+
+.btn.primario:hover {
+  background-color: var(--dark-blue-400);
+}
+
+.btn.secundario {
+  border: solid 1px var(--dark-blue-300);
+  background-color: var(--light-blue-100);
+  color: var(--dark-blue-300);
+}
+
+.btn.secundario:hover {
+  background-color: var(--light-blue-300);
+}
+
+
+
+/* SECCION HEADER */
+
+header {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  grid-area: header;
+}
+
+.logo {
+  height: 6rem;
+}
+
+.logo img {
+  height: 100%;
+}
+
+.titulo {
+  font-size: 3.6rem;
+}
+
+/* SECCION MAIN */
+
+.contenedor-ingreso {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  align-items: flex-end;
+  grid-area: ingreso;
+}
+
+.ingreso-texto {
+  width: 80%;
+  height: 100%;
+  min-width: 500px;
+  position: relative;
+}
+
+.texto-usuario {
+  width: 100%;
+  height: 70%;
+  background-color: var(--light-blue-100);
+  border: solid 0px transparent;
+  resize: none;
+  font-size: 3.2rem;
+}
+
+.texto-usuario::placeholder {
+  color: var(--dark-blue-400);
+}
+
+.reglas {
+  color: var(--gray-400);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1rem;
+  position: absolute;
+  bottom: 11rem;
+  font-size: 1.2rem;
+}
+
+.buttons {
+  overflow: visible;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 1rem;
+  position: absolute;
+  bottom: 2.2rem;
+}
+
+.contenedor-resultado {
+  width: 100%;
+  height: 100%;
+  padding: 4rem;
+  grid-area: resultado;
+}
+
+.resultado-texto {
+  height: 100%;
+  width: 100%;
+  padding: 3.2rem;
+  background-color: var(--white);
+  border-radius: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow);
+  -webkit-box-shadow: var(--shadow);
+  -moz-box-shadow: var(--shadow);
+}
+
+.no-encontrado {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.txt-no-encontrado {
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.texto {
+  font-size: 2.4rem;
+  color: var(--gray-400);
+  height: 100%;
+}
+
+.resultado-texto button {
+  width: 60%;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--dark-blue-400);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+/* RESPONSIVE TABLET */
+@media screen and (max-width: 769px) {
+  * {
+    overflow: auto;
+  }
+
+  body {
+    height: 100vh;
+    grid-template-rows: 15rem auto auto 30px;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "ingreso"
+      "resultado"
+      "footer";
+  }
+
+  header {
+    padding: 0 40px;
+  }
+
+
+  .ingreso-texto {
+    width: 100%;
+    min-width: none;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 1rem;
+  }
+
+  .contenedor-resultado {
+    height: fit-content;
+  }
+
+  .img-buscar {
+    display: none;
+  }
+}
+
+
+
+/* RESPONSIVE CELULAR */
+@media screen and (max-width: 375px) {}

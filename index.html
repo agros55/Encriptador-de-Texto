@@ -11,19 +11,36 @@
 <body>
     <header>
         <div class="logo">
-            <img src="./assets/imgs/logo.svg" alt="Alura">
+            <img src="./assets/imgs/logo-fv.png" alt="FV Web">
         </div>
+        <h1 class="titulo">Encriptador de Texto</h1>
     </header>
-    <main>
-        <div class="logo_desktop">
-            <img src="./assets/imgs/logo.svg" alt="Alura">
+    <section class="contenedor-ingreso">
+        <div class="ingreso-texto">
+            <textarea class="texto-usuario" name="texto-usuario" id="" placeholder="Ingrese el texto aqui"></textarea>
+            <p class="reglas"><img src="./assets/imgs/atencion.svg" alt="">Solo letras minusculas y sin acentos.</p>
+            <div class="buttons">
+                <button class="btn primario" id="btn-encriptar">Encriptar</button>
+                <button class="btn secundario" id="btn-desencriptar">Desencriptar</button>
+            </div>
         </div>
-
-    </main>
+    </section>
+    <section class="contenedor-resultado">
+        <div class="resultado-texto">
+            <img class="img-buscar" src="./assets/imgs/encript.png" alt="No encontrado">
+            <h2 class="no-encontrado">Ningún mensaje fue encontrado</h2>
+            <p class="txt-no-encontrado">Ingresa el texto que desees encriptar o desencriptar.</p>
+        </div>
+    </section>
     <footer>
-
+        &copy; 2024 - Desarrollado por Fernando Viveros
     </footer>
     <script src="./assets/js/scripts.js"></script>
 </body>
 
 </html>
+
+<!-- <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci montes, sit et diam risus
+    scelerisque vitae est. Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget fringilla
+    sit elit. Libero, sodales duis fames id diam feugiat aliquet non egestas.</p>
+<button class="btn secundario" id="btn-copiar">Copiar</button> -->
