@@ -234,6 +234,16 @@ footer {
   right: 0;
 }
 
+.social {
+  margin-left: .8rem;
+  transition: all .3s ease;
+}
+
+.social:hover {
+  transform: scale(1.1);
+}
+
+
 
 
 
