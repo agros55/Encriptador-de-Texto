@@ -35,39 +35,48 @@ const copiar = () => {
 }
 
 const encriptar = () => {
-    const textoUsuario = document.getElementById("texto-usuario").value;
+    let textoUsuario = document.getElementById("texto-usuario").value;
     const contenedorResultado = document.getElementById("resultado-texto");
-    let textoEncriptado = "";
+    if (textoUsuario != "") {
+        textoUsuario = textoUsuario.toLowerCase();
+        let textoEncriptado = "";
+        const iterator = textoUsuario[Symbol.iterator]();
+        let caracter = iterator.next();
 
-    const iterator = textoUsuario[Symbol.iterator]();
-    let caracter = iterator.next();
+        while (!caracter.done) {
+            textoEncriptado += analisisEncrip(caracter.value);
+            console.log(textoEncriptado);
+            caracter = iterator.next();
+        }
 
-    while (!caracter.done) {
-        textoEncriptado += analisisEncrip(caracter.value);
-        console.log(textoEncriptado);
-        caracter = iterator.next();
+        contenedorResultado.innerHTML = `
+        <p class="texto" id="texto">${textoEncriptado}</p>
+    <button class="btn secundario" id="btn-copiar">Copiar</button>
+        `
+
+        const btnCopiar = document.getElementById("btn-copiar");
+        btnCopiar.addEventListener('click', copiar);
+    } else {
+        alert("Debe ingresar un texto.")
     }
-
-    contenedorResultado.innerHTML = `
-    <p class="texto" id="texto">${textoEncriptado}</p>
-<button class="btn secundario" id="btn-copiar">Copiar</button>
-    `
-
-    const btnCopiar = document.getElementById("btn-copiar");
-    btnCopiar.addEventListener('click', copiar);
 }
 
 const desencriptar = () => {
-    const textoUsuario = document.getElementById("texto-usuario").value;
+    let textoUsuario = document.getElementById("texto-usuario").value;
     const contenedorResultado = document.getElementById("resultado-texto");
-    let textoEncriptado = analisisDecrip(textoUsuario);
+    if (textoUsuario != "") {
+        textoUsuario = textoUsuario.toLowerCase();
+        let textoEncriptado = analisisDecrip(textoUsuario);
 
-    contenedorResultado.innerHTML = `
-    <p class="texto" id="texto">${textoEncriptado}</p>
-    <button class="btn secundario" id="btn-copiar">Copiar</button>
-    `
-    const btnCopiar = document.getElementById("btn-copiar");
-    btnCopiar.addEventListener('click', copiar);
+        contenedorResultado.innerHTML = `
+        <p class="texto" id="texto">${textoEncriptado}</p>
+        <button class="btn secundario" id="btn-copiar">Copiar</button>
+        `
+        const btnCopiar = document.getElementById("btn-copiar");
+        btnCopiar.addEventListener('click', copiar);
+    } else {
+        alert("Debe ingresar un texto.")
+    }
 }
 
 btnEncriptar.addEventListener('click', encriptar);
