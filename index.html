@@ -15,9 +15,11 @@
         </div>
         <h1 class="titulo">Encriptador de Texto</h1>
     </header>
+
     <section class="contenedor-ingreso">
         <div class="ingreso-texto">
-            <textarea class="texto-usuario" name="texto-usuario" id="" placeholder="Ingrese el texto aqui"></textarea>
+            <textarea class="texto-usuario" name="texto-usuario" id="texto-usuario"
+                placeholder="Ingrese el texto aqui"></textarea>
             <p class="reglas"><img src="./assets/imgs/atencion.svg" alt="">Solo letras minusculas y sin acentos.</p>
             <div class="buttons">
                 <button class="btn primario" id="btn-encriptar">Encriptar</button>
@@ -25,16 +27,19 @@
             </div>
         </div>
     </section>
+
     <section class="contenedor-resultado">
-        <div class="resultado-texto">
+        <div class="resultado-texto" id="resultado-texto">
             <img class="img-buscar" src="./assets/imgs/encript.png" alt="No encontrado">
             <h2 class="no-encontrado">Ningún mensaje fue encontrado</h2>
             <p class="txt-no-encontrado">Ingresa el texto que desees encriptar o desencriptar.</p>
         </div>
     </section>
+
     <footer>
         &copy; 2024 - Desarrollado por Fernando Viveros
     </footer>
+
     <script src="./assets/js/scripts.js"></script>
 </body>
 
